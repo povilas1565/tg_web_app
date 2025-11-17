@@ -1,0 +1,75 @@
+.tg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tg-field-inline {
+  margin-top: 6px;
+  gap: 6px;
+}
+
+.tg-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tg-textarea,
+.tg-select {
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
+  color: var(--text-main);
+  padding: 8px 10px;
+  font-size: 12px;
+  outline: none;
+}
+
+.tg-textarea {
+  resize: vertical;
+}
+
+.tg-textarea:focus,
+.tg-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+.tg-field-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.tg-field-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tg-helper {
+  color: var(--text-muted);
+}
+
+.tg-fields-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.tg-range {
+  width: 100%;
+}
+
+.tg-range-value {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .tg-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,44 @@
+@import "./buttons.css";
+
+.tg-templates-count {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tg-templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 8px;
+}
+
+.tg-template-card {
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(15, 23, 42, 0.96);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.tg-template-thumb {
+  border-radius: 10px;
+  background: radial-gradient(circle at top, rgba(79, 70, 229, 0.4), #020617);
+  aspect-ratio: 16 / 9;
+}
+
+.tg-template-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tg-template-title {
+  font-size: 12px;
+}
+
+.tg-template-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}

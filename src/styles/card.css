@@ -1,0 +1,28 @@
+.tg-card {
+  background: radial-gradient(circle at top left, #050816, #020617);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  padding: 10px 12px 12px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tg-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tg-card-title {
+  font-size: 14px;
+}
+
+.tg-card-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}

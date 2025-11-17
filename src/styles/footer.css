@@ -1,0 +1,44 @@
+.tg-footer {
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.tg-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tg-footer-title {
+  font-size: 14px;
+}
+
+.tg-footer-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tg-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 720px) {
+  .tg-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tg-footer-right {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+}

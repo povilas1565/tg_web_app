@@ -1,0 +1,64 @@
+.tg-chip {
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.tg-chip-outline {
+  background: transparent;
+}
+
+.tg-chip-primary {
+  border-color: transparent;
+  background: radial-gradient(circle at top left, #4f46e5, #22d3ee);
+  color: #f9fafb;
+}
+
+.tg-chip-small {
+  padding: 3px 8px;
+}
+
+.tg-chip-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: #e5e7eb;
+}
+
+.tg-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tg-button-primary {
+  border-radius: 999px;
+  border: none;
+  padding: 9px 18px;
+  font-size: 13px;
+  background: radial-gradient(circle at top left, #4f46e5, #22d3ee);
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+.tg-button-ghost {
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  padding: 8px 16px;
+  font-size: 12px;
+  background: transparent;
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+.tg-link-button {
+  border: none;
+  background: transparent;
+  color: #a5b4fc;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+}
