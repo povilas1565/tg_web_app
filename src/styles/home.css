@@ -1,42 +1,76 @@
+
+/* home.css */
 .tg-home {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
 }
 
 .tg-home-header {
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tg-home-title {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .tg-home-cards {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .tg-home-card {
-    width: 30%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: #292929;
+  border-radius: 10px;
+  width: 30%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tg-home-card:hover {
+  transform: translateY(-5px);
 }
 
 .tg-home-card-thumb img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .tg-home-card-body {
-    padding: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.tg-home-card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.tg-home-card-body p {
+  font-size: 0.875rem;
 }
 
 .tg-home-prompt {
-    margin-top: 20px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .tg-home-prompt-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 50%;
+  max-width: 500px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  .tg-home-card {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  }
+  .tg-home-prompt-input {
+    width: 80%;
+  }
 }

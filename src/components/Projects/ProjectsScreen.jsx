@@ -1,3 +1,4 @@
+import "../../styles/global.css";
 import React from "react";
 import "../../styles/projects.css";
 import "../../styles/buttons.css";

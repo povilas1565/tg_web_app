@@ -1,3 +1,4 @@
+import "../../styles/global.css";
 // src/components/HomeScreen/HomeScreen.jsx
 import React from "react";
 import "../../styles/home.css";

@@ -1,3 +1,4 @@
+import "../../styles/global.css";
 import "../../styles/buttons.css";
 
 const Header = ({ appScreen, currentProject, onBackToProjects, onOpenProfile, onOpenSettings }) => {

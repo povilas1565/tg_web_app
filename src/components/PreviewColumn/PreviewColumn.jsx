@@ -1,3 +1,4 @@
+import "../../styles/global.css";
 import React from "react";
 import PreviewCard from "./PreviewCard.jsx";
 import Scenes from "./Scenes.jsx";

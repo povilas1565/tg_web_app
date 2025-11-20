@@ -1,3 +1,4 @@
+import "../../styles/global.css";
 import React from "react";
 import ScriptPanel from "./ScriptPanel.jsx";
 import AvatarVoicePanel from "./AvatarVoicePanel.jsx";
