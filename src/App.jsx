@@ -10,6 +10,9 @@ import VideoScreen from "./components/Video/VideoScreen.jsx";  // Добавле
 import CreateVideoScreen from "./components/Video/CreateVideoScreen.jsx";  // Добавлен CreateVideoScreen
 import "./styles/app-layout.css";
 import { useTelegram } from "./telegram/useTelegram.js";
+import {useEffect, useState} from "react";
+import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
 
 const App = () => {
   // appScreen: 'projects' | 'editor' | 'profile' | 'home' | 'video' | 'create-video'

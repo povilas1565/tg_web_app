@@ -12,7 +12,7 @@ const HomeScreen = () => {
             <div className="tg-home-cards">
                 <div className="tg-home-card">
                     <div className="tg-home-card-thumb">
-                        <img src="path-to-your-image.jpg" alt="photo-to-video" />
+                        <img src="" alt="photo-to-video" />
                     </div>
                     <div className="tg-home-card-body">
                         <h3>Фото в видео</h3>
@@ -22,7 +22,7 @@ const HomeScreen = () => {
 
                 <div className="tg-home-card">
                     <div className="tg-home-card-thumb">
-                        <img src="path-to-your-image.jpg" alt="generate-assets" />
+                        <img src="" alt="generate-assets" />
                     </div>
                     <div className="tg-home-card-body">
                         <h3>Создание активов</h3>
@@ -32,7 +32,7 @@ const HomeScreen = () => {
 
                 <div className="tg-home-card">
                     <div className="tg-home-card-thumb">
-                        <img src="path-to-your-image.jpg" alt="ugc-ad" />
+                        <img src="" alt="ugc-ad" />
                     </div>
                     <div className="tg-home-card-body">
                         <h3>UGC Ad</h3>
