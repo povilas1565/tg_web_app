@@ -5,43 +5,43 @@ const SceneSettingsPanel = () => {
   return (
     <section className="tg-card">
       <div className="tg-card-header">
-        <div className="tg-card-title">Scene settings</div>
+        <div className="tg-card-title">Настройки сцены</div>
       </div>
 
       <div className="tg-fields-grid">
         <div className="tg-field">
-          <label className="tg-label">Background</label>
+          <label className="tg-label">Фон</label>
           <select className="tg-select">
-            <option>Blurred office</option>
-            <option>Plain color</option>
-            <option>Gradient</option>
+            <option>Размытый</option>
+            <option>Однотонный цвет</option>
+            <option>Наклон</option>
           </select>
         </div>
         <div className="tg-field">
-          <label className="tg-label">Layout</label>
+          <label className="tg-label">Макет</label>
           <select className="tg-select">
-            <option>Avatar center</option>
-            <option>Avatar left + text</option>
-            <option>Avatar right + text</option>
+            <option>Аватар в центре</option>
+            <option>Аватар слева + текст</option>
+            <option>Аватар справа + текст</option>
           </select>
         </div>
       </div>
 
       <div className="tg-fields-grid">
         <div className="tg-field">
-          <label className="tg-label">Subtitles</label>
+          <label className="tg-label">Субтитры</label>
           <select className="tg-select">
-            <option>Auto-generate</option>
-            <option>Disabled</option>
-            <option>Upload .srt</option>
+            <option>Автосозданные</option>
+            <option>Отключенные</option>
+            <option>Загруженные .srt</option>
           </select>
         </div>
         <div className="tg-field">
-          <label className="tg-label">Brand kit</label>
+          <label className="tg-label">Фирменный комплект</label>
           <select className="tg-select">
-            <option>Default</option>
-            <option>Brand: Landing</option>
-            <option>Brand: YouTube</option>
+            <option>По умолчанию</option>
+            <option>Бренд: Landing</option>
+            <option>Бренд: YouTube</option>
           </select>
         </div>
       </div>

@@ -10,7 +10,7 @@ const Tabs = ({ activeTab, onChange }) => {
         }
         onClick={() => onChange("script")}
       >
-        Script
+        Скрипт
       </button>
       <button
         className={
@@ -18,7 +18,7 @@ const Tabs = ({ activeTab, onChange }) => {
         }
         onClick={() => onChange("avatar")}
       >
-        Avatar
+        Аватар
       </button>
       <button
         className={
@@ -26,7 +26,7 @@ const Tabs = ({ activeTab, onChange }) => {
         }
         onClick={() => onChange("templates")}
       >
-        Templates
+        Шаблоны
       </button>
     </div>
   );

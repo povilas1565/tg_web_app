@@ -5,13 +5,13 @@ const AvatarGuidelinesPanel = () => {
   return (
     <section className="tg-card">
       <div className="tg-card-header">
-        <div className="tg-card-title">Upload guidelines</div>
+        <div className="tg-card-title">Рекомендации по загрузке</div>
       </div>
       <ul className="tg-guidelines-list">
-        <li>Look straight at the camera, without turning your head too much</li>
-        <li>Uniform light, without harsh shadows</li>
-        <li>Neutral facial expressions, without strong emotions</li>
-        <li>A minimum of accessories that cover the face</li>
+        <li>Смотрите прямо в камеру, не поворачивая слишком сильно голову.</li>
+        <li>Равномерный свет, без резких теней</li>
+        <li>Нейтральное выражение лица, без сильных эмоций.</li>
+        <li>Минимум аксессуаров, закрывающих лицо</li>
       </ul>
     </section>
   );

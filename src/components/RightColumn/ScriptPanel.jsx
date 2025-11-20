@@ -6,32 +6,32 @@ const ScriptPanel = () => {
   return (
     <section className="tg-card">
       <div className="tg-card-header">
-        <div className="tg-card-title">Script</div>
+        <div className="tg-card-title">Скрипт</div>
         <div className="tg-card-actions">
-          <button className="tg-chip tg-chip-small">AI rewrite</button>
-          <button className="tg-chip tg-chip-small">Translate</button>
-          <button className="tg-chip tg-chip-small">Shorten</button>
+          <button className="tg-chip tg-chip-small">Переписывание с ИИ</button>
+          <button className="tg-chip tg-chip-small">Перевод</button>
+          <button className="tg-chip tg-chip-small">Коротко</button>
         </div>
       </div>
 
       <div className="tg-field">
-        <label className="tg-label">Scenario</label>
+        <label className="tg-label">Сценарий</label>
         <textarea
           rows={6}
           className="tg-textarea"
-          placeholder="Write what your avatar should say..."
+          placeholder="Напишите, что должен сказать ваш аватар..."
         />
         <div className="tg-field-footer">
-          <span className="tg-helper">0 / 600 symbols</span>
+          <span className="tg-helper">0 / 600 символов</span>
           <div className="tg-field-footer-right">
-            <button className="tg-link-button">Insert example</button>
-            <button className="tg-link-button">Import from file</button>
+            <button className="tg-link-button">Вставьте пример</button>
+            <button className="tg-link-button">Импорт из файла</button>
           </div>
         </div>
       </div>
 
       <div className="tg-field tg-field-inline">
-        <label className="tg-label">Reading speed</label>
+        <label className="tg-label">Скорость чтения</label>
         <input
           type="range"
           min="0"
@@ -39,7 +39,7 @@ const ScriptPanel = () => {
           defaultValue="40"
           className="tg-range"
         />
-        <span className="tg-range-value">Normal</span>
+        <span className="tg-range-value">Нормальный</span>
       </div>
     </section>
   );

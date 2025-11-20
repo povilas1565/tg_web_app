@@ -11,32 +11,32 @@ const avatars = [
 
 const AvatarGalleryPanel = () => {
   return (
-    <section className="tg-card">
-      <div className="tg-card-header">
-        <div className="tg-card-title">Avatar library</div>
-        <div className="tg-card-actions">
-          <button className="tg-chip tg-chip-small">All</button>
-          <button className="tg-chip tg-chip-small">My avatars</button>
-          <button className="tg-chip tg-chip-small">Team</button>
+      <section className="tg-card">
+        <div className="tg-card-header">
+          <div className="tg-card-title">Библиотека Аватаров</div>
+          <div className="tg-card-actions">
+            <button className="tg-chip tg-chip-small">Все</button>
+            <button className="tg-chip tg-chip-small">Мои аватары</button>
+            <button className="tg-chip tg-chip-small">Команда</button>
+          </div>
         </div>
-      </div>
 
-      <div className="tg-avatar-grid">
-        {avatars.map((a) => (
-          <button key={a.id} className="tg-avatar-card">
-            <div className="tg-avatar-thumb" />
-            <div className="tg-avatar-info">
-              <span className="tg-avatar-name">{a.name}</span>
-              <span className="tg-avatar-tag">{a.tag}</span>
-            </div>
+        <div className="tg-avatar-grid">
+          {avatars.map((a) => (
+              <button key={a.id} className="tg-avatar-card">
+                <div className="tg-avatar-thumb" />
+                <div className="tg-avatar-info">
+                  <span className="tg-avatar-name">{a.name}</span>
+                  <span className="tg-avatar-tag">{a.tag}</span>
+                </div>
+              </button>
+          ))}
+          <button className="tg-avatar-card tg-avatar-card-add">
+            <div className="tg-avatar-add-icon">+</div>
+            <span className="tg-avatar-add-text">Создать новый аватар</span>
           </button>
-        ))}
-        <button className="tg-avatar-card tg-avatar-card-add">
-          <div className="tg-avatar-add-icon">+</div>
-          <span className="tg-avatar-add-text">Create new avatar</span>
-        </button>
-      </div>
-    </section>
+        </div>
+      </section>
   );
 };
 

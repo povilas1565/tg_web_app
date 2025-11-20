@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from "react";
-import Layout from "./components/Layout/Layout.jsx";
-import Header from "./components/Header/Header.jsx";
 import Tabs from "./components/Tabs/Tabs.jsx";
 import PreviewColumn from "./components/PreviewColumn/PreviewColumn.jsx";
 import RightColumn from "./components/RightColumn/RightColumn.jsx";
@@ -8,12 +5,15 @@ import FooterBar from "./components/FooterBar/FooterBar.jsx";
 import ProjectsScreen from "./components/Projects/ProjectsScreen.jsx";
 import ProfileScreen from "./components/Profile/ProfileScreen.jsx";
 import SettingsModal from "./components/Settings/SettingsModal.jsx";
+import HomeScreen from "./components/Home/HomeScreen.jsx";  // Добавлен HomeScreen
+import VideoScreen from "./components/Video/VideoScreen.jsx";  // Добавлен VideoScreen
+import CreateVideoScreen from "./components/Video/CreateVideoScreen.jsx";  // Добавлен CreateVideoScreen
 import "./styles/app-layout.css";
 import { useTelegram } from "./telegram/useTelegram.js";
 
 const App = () => {
-  // appScreen: 'projects' | 'editor' | 'profile'
-  const [appScreen, setAppScreen] = useState("projects");
+  // appScreen: 'projects' | 'editor' | 'profile' | 'home' | 'video' | 'create-video'
+  const [appScreen, setAppScreen] = useState("home");  // Установили начальный экран как home
   const [activeTab, setActiveTab] = useState("script"); // script | avatar | templates
   const [currentProject, setCurrentProject] = useState(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -23,18 +23,17 @@ const App = () => {
     if (!webApp) return;
     const mainButton = webApp.MainButton;
 
+    // Логика для отображения текста в кнопке
     if (appScreen === "projects") {
-      mainButton.setText("Create or open project");
+      mainButton.setText("Создать или открыть проект");
     } else if (appScreen === "profile") {
-      mainButton.setText("Back to projects");
-    } else {
-      if (activeTab === "script") {
-        mainButton.setText("Generate video");
-      } else if (activeTab === "avatar") {
-        mainButton.setText("Save avatar & continue");
-      } else {
-        mainButton.setText("Use selected template");
-      }
+      mainButton.setText("Назад к проектам");
+    } else if (appScreen === "home") {
+      mainButton.setText("К видео");
+    } else if (appScreen === "video") {
+      mainButton.setText("Редактировать видео");
+    } else if (appScreen === "create-video") {
+      mainButton.setText("Создать видео");
     }
 
     mainButton.show();
@@ -54,6 +53,10 @@ const App = () => {
         setAppScreen("editor");
       } else if (appScreen === "profile") {
         setAppScreen("projects");
+      } else if (appScreen === "home") {
+        setAppScreen("video");
+      } else if (appScreen === "video") {
+        setAppScreen("create-video");
       } else {
         alert(`MainButton clicked in tab: ${activeTab}`);
       }
@@ -69,7 +72,7 @@ const App = () => {
   const handleOpenProject = (project) => {
     setCurrentProject(project || {
       id: 999,
-      name: "New project",
+      name: "Новый проект",
       duration: "0:30",
       scenes: 1
     });
@@ -89,37 +92,40 @@ const App = () => {
   };
 
   return (
-    <Layout>
-      <Header
-        appScreen={appScreen}
-        currentProject={currentProject}
-        onBackToProjects={handleBackToProjects}
-        onOpenProfile={handleOpenProfile}
-        onOpenSettings={handleOpenSettings}
-      />
+      <Layout>
+        <Header
+            appScreen={appScreen}
+            currentProject={currentProject}
+            onBackToProjects={handleBackToProjects}
+            onOpenProfile={handleOpenProfile}
+            onOpenSettings={handleOpenSettings}
+        />
 
-      {appScreen === "projects" && (
-        <ProjectsScreen onOpenProject={handleOpenProject} />
-      )}
+        {/* Рендерим экран в зависимости от состояния appScreen */}
+        {appScreen === "home" && <HomeScreen />}
+        {appScreen === "video" && <VideoScreen />}
+        {appScreen === "create-video" && <CreateVideoScreen />}
+        {appScreen === "projects" && <ProjectsScreen onOpenProject={handleOpenProject} />}
+        {appScreen === "profile" && <ProfileScreen />}
 
-      {appScreen === "profile" && <ProfileScreen />}
+        {/* Экран редактора */}
+        {appScreen === "editor" && (
+            <>
+              <Tabs activeTab={activeTab} onChange={setActiveTab} />
+              <main className="app-main-grid">
+                <PreviewColumn activeTab={activeTab} />
+                <RightColumn activeTab={activeTab} />
+              </main>
+              <FooterBar activeTab={activeTab} />
+            </>
+        )}
 
-      {appScreen === "editor" && (
-        <>
-          <Tabs activeTab={activeTab} onChange={setActiveTab} />
-          <main className="app-main-grid">
-            <PreviewColumn activeTab={activeTab} />
-            <RightColumn activeTab={activeTab} />
-          </main>
-          <FooterBar activeTab={activeTab} />
-        </>
-      )}
-
-      {isSettingsOpen && (
-        <SettingsModal onClose={() => setIsSettingsOpen(false)} />
-      )}
-    </Layout>
+        {isSettingsOpen && (
+            <SettingsModal onClose={() => setIsSettingsOpen(false)} />
+        )}
+      </Layout>
   );
 };
 
 export default App;
+

@@ -1,0 +1,18 @@
+.tg-video {
+    padding: 20px;
+    text-align: center;
+}
+
+.tg-video-empty-state {
+    margin-top: 50px;
+}
+
+.tg-button-primary {
+    padding: 12px 20px;
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+

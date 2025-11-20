@@ -9,33 +9,33 @@ import TemplatesGridPanel from "./TemplatesGridPanel.jsx";
 import ProjectSettingsPanel from "./ProjectSettingsPanel.jsx";
 
 const RightColumn = ({ activeTab }) => {
-  if (activeTab === "avatar") {
-    return (
-      <section className="tg-right">
-        <AvatarGalleryPanel />
-        <AvatarGuidelinesPanel />
-      </section>
-    );
-  }
+    if (activeTab === "avatar") {
+        return (
+            <section className="tg-right">
+                <AvatarGalleryPanel />
+                <AvatarGuidelinesPanel />
+            </section>
+        );
+    }
 
-  if (activeTab === "templates") {
-    return (
-      <section className="tg-right">
-        <TemplatesFilterPanel />
-        <TemplatesGridPanel />
-      </section>
-    );
-  }
+    if (activeTab === "templates") {
+        return (
+            <section className="tg-right">
+                <TemplatesFilterPanel />
+                <TemplatesGridPanel />
+            </section>
+        );
+    }
 
-  // script tab (default)
-  return (
-    <section className="tg-right">
-      <ScriptPanel />
-      <AvatarVoicePanel />
-      <SceneSettingsPanel />
-      <ProjectSettingsPanel />
-    </section>
-  );
+    // script tab (default)
+    return (
+        <section className="tg-right">
+            <ScriptPanel />
+            <AvatarVoicePanel />
+            <SceneSettingsPanel />
+            <ProjectSettingsPanel />
+        </section>
+    );
 };
 
 export default RightColumn;

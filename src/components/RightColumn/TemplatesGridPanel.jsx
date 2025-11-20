@@ -2,18 +2,17 @@ import React from "react";
 import "../../styles/templates.css";
 
 const templates = [
-  { id: 1, title: "Website hero intro", duration: "0:25", tag: "Marketing" },
-  { id: 2, title: "Onboarding guide", duration: "0:45", tag: "Product" },
-  { id: 3, title: "Telegram welcome", duration: "0:15", tag: "Social" },
-  { id: 4, title: "Course lesson", duration: "1:10", tag: "Education" }
+  { id: 1, title: "Введение героя сайта", duration: "0:25", tag: "Маркетинг" },
+  { id: 2, title: "Руководство по адаптации", duration: "0:45", tag: "Продукт" },
+  { id: 3, title: "Занятие курса", duration: "1:10", tag: "Образование" }
 ];
 
 const TemplatesGridPanel = () => {
   return (
     <section className="tg-card">
       <div className="tg-card-header">
-        <div className="tg-card-title">Templates</div>
-        <span className="tg-templates-count">{templates.length} items</span>
+        <div className="tg-card-title">Шаблоны</div>
+        <span className="tg-templates-count">{templates.length} единицы</span>
       </div>
       <div className="tg-templates-grid">
         {templates.map((t) => (

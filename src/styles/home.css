@@ -1,0 +1,42 @@
+.tg-home {
+    padding: 20px;
+    text-align: center;
+}
+
+.tg-home-header {
+    margin-bottom: 20px;
+}
+
+.tg-home-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tg-home-card {
+    width: 30%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tg-home-card-thumb img {
+    width: 100%;
+    height: auto;
+}
+
+.tg-home-card-body {
+    padding: 10px;
+}
+
+.tg-home-prompt {
+    margin-top: 20px;
+}
+
+.tg-home-prompt-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}

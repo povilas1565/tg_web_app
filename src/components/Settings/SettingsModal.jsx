@@ -8,7 +8,7 @@ const SettingsModal = ({ onClose }) => {
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2 className="modal-title">Workspace settings</h2>
+          <h2 className="modal-title">Настройки рабочей области</h2>
           <button className="modal-close" onClick={onClose}>
             ✕
           </button>
@@ -17,34 +17,33 @@ const SettingsModal = ({ onClose }) => {
         <div className="modal-body">
           <div className="tg-fields-grid">
             <div className="tg-field">
-              <label className="tg-label">Workspace name</label>
-              <input className="tg-textarea" defaultValue="AI Avatars Studio" />
+              <label className="tg-label">Название рабочей области</label>
+              <input className="tg-textarea" defaultValue="ИИ Аватары" />
             </div>
             <div className="tg-field">
-              <label className="tg-label">Default language</label>
-              <select className="tg-select" defaultValue="en">
-                <option value="en">English</option>
-                <option value="ru">Russian</option>
+              <label className="tg-label">Язык по умолчанию</label>
+              <select className="tg-select" defaultValue="ru">
+                <option value="ru">Русский</option>
               </select>
             </div>
           </div>
 
           <div className="tg-field" style={{ marginTop: 8 }}>
-            <label className="tg-label">Theme</label>
+            <label className="tg-label">Тема</label>
             <div className="tg-chips-row">
-              <button className="tg-chip tg-chip-active">Dark</button>
-              <button className="tg-chip">Light</button>
-              <button className="tg-chip">System</button>
+              <button className="tg-chip tg-chip-active">Темная</button>
+              <button className="tg-chip">Светлая</button>
+              <button className="tg-chip">Система</button>
             </div>
           </div>
         </div>
 
         <div className="modal-footer">
           <button className="tg-button-ghost" onClick={onClose}>
-            Cancel
+            Отменить
           </button>
           <button className="tg-button-primary" onClick={onClose}>
-            Save changes
+            Сохранить изменения
           </button>
         </div>
       </div>

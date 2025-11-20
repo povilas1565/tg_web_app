@@ -6,25 +6,24 @@ const TemplatesFilterPanel = () => {
   return (
     <section className="tg-card">
       <div className="tg-card-header">
-        <div className="tg-card-title">Template filters</div>
+        <div className="tg-card-title">Фильтры шаблонов</div>
       </div>
       <div className="tg-fields-grid">
         <div className="tg-field">
-          <label className="tg-label">Goal</label>
+          <label className="tg-label">Цель</label>
           <select className="tg-select">
-            <option>All</option>
-            <option>Marketing</option>
-            <option>Education</option>
-            <option>Explainer</option>
+            <option>Все</option>
+            <option>Маркетинг</option>
+            <option>Образование</option>
           </select>
         </div>
         <div className="tg-field">
-          <label className="tg-label">Duration</label>
+          <label className="tg-label">Длительность</label>
           <select className="tg-select">
-            <option>Any</option>
-            <option>30 sec</option>
-            <option>30–60 sec</option>
-            <option>60 sec</option>
+            <option>Любая</option>
+            <option>30 сек</option>
+            <option>30–60 сек</option>
+            <option>60 сек</option>
           </select>
         </div>
       </div>
