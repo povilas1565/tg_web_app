@@ -1,0 +1,118 @@
+.tg-avatars {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tg-avatars-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tg-avatars-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.tg-avatars-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tg-avatars-empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+}
+
+.tg-avatars-empty h2 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+}
+
+.tg-avatars-empty p {
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+}
+
+.tg-avatar-creation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.tg-avatar-option {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tg-avatar-option h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.tg-avatar-option p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.tg-my-avatars {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    padding: 20px;
+}
+
+.tg-my-avatars h3 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+}
+
+.tg-avatars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+.tg-avatar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.tg-avatar-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, #4f46e5, #22d3ee);
+}
+
+.tg-avatar-item span {
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .tg-avatar-creation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .tg-avatars-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

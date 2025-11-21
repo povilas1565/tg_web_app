@@ -9,6 +9,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  padding: 20px;
 }
 
 .profile-main-left {
@@ -57,58 +61,101 @@
   gap: 6px;
 }
 
-.profile-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 12px;
+.profile-subscription {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  padding: 20px;
 }
 
-.profile-card-title {
-  margin: 0 0 4px;
+.profile-subscription h2 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+
+.profile-subscription-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-md);
+}
+
+.profile-subscription-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-subscription-option {
+  background: var(--bg-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subscription-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-subscription-name {
+  font-weight: 600;
+}
+
+.profile-subscription-badge {
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.profile-subscription-price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.subscription-features {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.subscription-features li {
+  margin-bottom: 4px;
+}
+
+.profile-videos-left {
+  color: var(--text-muted);
   font-size: 14px;
 }
 
-.profile-card-subtitle {
-  margin: 0 0 8px;
-  font-size: 12px;
+.full-width {
+  width: 100%;
+}
+
+.profile-feedback {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  padding: 20px;
+}
+
+.profile-feedback h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.profile-feedback p {
+  margin: 0 0 16px 0;
   color: var(--text-muted);
-}
-
-.profile-usage-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.profile-usage-label {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.profile-usage-value {
-  font-size: 16px;
-  margin-top: 2px;
-}
-
-.profile-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 12px;
-}
-
-.profile-list-role {
-  color: var(--text-muted);
-  font-size: 11px;
-  margin-left: 6px;
-}
-
-.profile-list li {
-  display: flex;
-  justify-content: space-between;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -117,7 +164,8 @@
     align-items: flex-start;
   }
 
-  .profile-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .profile-subscription-info {
+    flex-direction: column;
+    gap: 8px;
   }
 }

@@ -3,6 +3,7 @@
   padding: 12px;
   display: flex;
   justify-content: center;
+  background: var(--bg-root);
 }
 
 .tg-shell {

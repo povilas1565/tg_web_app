@@ -1,76 +1,85 @@
-
-/* home.css */
 .tg-home {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .tg-home-header {
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .tg-home-title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
 }
 
 .tg-home-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }
 
 .tg-home-card {
-  background-color: #292929;
-  border-radius: 10px;
-  width: 30%;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .tg-home-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
-.tg-home-card-thumb img {
-  width: 100%;
-  height: auto;
+.tg-home-card-thumb {
+  margin-bottom: 12px;
 }
 
-.tg-home-card-body {
-  padding: 15px;
-  text-align: center;
+.tg-home-card-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
 }
 
 .tg-home-card-body h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
+  margin: 0 0 8px 0;
+  font-size: 16px;
 }
 
 .tg-home-card-body p {
-  font-size: 0.875rem;
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .tg-home-prompt {
-  margin-top: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .tg-home-prompt-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 50%;
+  width: 100%;
   max-width: 500px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: var(--bg-soft);
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.tg-home-prompt-input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 @media (max-width: 768px) {
-  .tg-home-card {
-    width: 100%;
-  }
-  .tg-home-prompt-input {
-    width: 80%;
+  .tg-home-cards {
+    grid-template-columns: 1fr;
   }
 }

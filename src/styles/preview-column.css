@@ -1,0 +1,12 @@
+.tg-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+}
+
+@media (max-width: 960px) {
+    .tg-left {
+        order: 2;
+    }
+}
