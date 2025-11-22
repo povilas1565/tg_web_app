@@ -1,9 +1,9 @@
 .tg-video {
-  padding: 32px 24px;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  min-height: calc(100vh - 140px);
+  gap: 24px;
+  min-height: calc(100vh - 180px);
 }
 
 .tg-video-header h1 {

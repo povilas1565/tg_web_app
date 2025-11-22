@@ -1,0 +1,56 @@
+/* Градиентные фоны */
+.gradient-bg-primary { background: var(--gradient-primary); }
+.gradient-bg-secondary { background: var(--gradient-secondary); }
+.gradient-bg-accent { background: var(--gradient-accent); }
+.gradient-bg-purple { background: var(--gradient-purple); }
+.gradient-bg-dark { background: var(--gradient-dark); }
+
+/* Градиентный текст */
+.text-gradient { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-purple { background: var(--gradient-purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-secondary { background: var(--gradient-secondary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Анимации */
+.fade-in { animation: fadeIn 0.5s ease-in; }
+.slide-in-left { animation: slideInLeft 0.5s ease-out; }
+.slide-in-right { animation: slideInRight 0.5s ease-out; }
+.slide-in-up { animation: slideInUp 0.5s ease-out; }
+.slide-in-down { animation: slideInDown 0.5s ease-out; }
+
+/* Тени */
+.shadow-glow { box-shadow: 0 0 30px rgba(79, 70, 229, 0.3); }
+.shadow-glow-purple { box-shadow: 0 0 30px rgba(163, 162, 255, 0.3); }
+.shadow-glow-secondary { box-shadow: 0 0 30px rgba(245, 87, 108, 0.3); }
+
+/* Размеры */
+.h-full { height: 100%; }
+.w-full { width: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+/* Flex utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1; }
+
+/* Spacing */
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.m-4 { margin: 1rem; }
+.m-6 { margin: 1.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+/* Border radius */
+.rounded { border-radius: 0.5rem; }
+.rounded-lg { border-radius: 0.75rem; }
+.rounded-xl { border-radius: 1rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mobile\:flex-col { flex-direction: column; }
+    .mobile\:text-center { text-align: center; }
+    .mobile\:w-full { width: 100%; }
+}

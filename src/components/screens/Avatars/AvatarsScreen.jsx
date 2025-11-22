@@ -1,4 +1,3 @@
-// components/screens/Avatars/AvatarsScreen.jsx
 import React from "react";
 import { useApp } from "../../../contexts/AppContext";
 import "../../../styles/avatars.css";
@@ -8,25 +7,25 @@ const AvatarsScreen = () => {
 
     const avatarOptions = [
         {
-            title: "Clone Yourself",
-            description: "Record yourself to create a realistic avatar",
+            title: "Клонируйте себя",
+            description: "Запишите себя, чтобы создать реалистичный аватар",
             buttonText: "Записать"
         },
         {
-            title: "Design an Avatar",
-            description: "Generate avatar from a prompt",
+            title: "Создайте аватар",
+            description: "Сгенерировать аватар из подсказки",
             buttonText: "Сгенерировать"
         },
         {
-            title: "Face Swap",
-            description: "Combine your face with another avatar",
+            title: "Смена лица",
+            description: "Объедините свое лицо с другим аватаром",
             buttonText: "Обменять"
         }
     ];
 
     const myAvatars = [
-        { name: "H Photo" },
-        { name: "Generate H avatar" }
+        { name: "H Фото" },
+        { name: "Сгенерировать H-аватар" }
     ];
 
     return (

@@ -21,22 +21,22 @@ const VideoScreen = () => {
 
             <div className="tg-video-tools">
                 <div className="tg-video-tool-card">
-                    <h3 className="gradient-text">Video Translation</h3>
+                    <h3 className="gradient-text">Перевод Видео</h3>
                 </div>
                 <div className="tg-video-tool-card">
-                    <h3 className="gradient-text">Video Agent</h3>
+                    <h3 className="gradient-text">Видеоагент</h3>
                 </div>
                 <div className="tg-video-tool-card">
-                    <h3 className="gradient-text">Instant Highlight</h3>
+                    <h3 className="gradient-text">Мгновенное выделение</h3>
                 </div>
             </div>
 
             <div className="tg-video-draft">
                 <div className="tg-video-draft-thumb"></div>
                 <div className="tg-video-draft-info">
-                    <h4>Untitled Video</h4>
-                    <p>20 August 2025</p>
-                    <span className="tg-video-draft-badge gradient-badge">Draft</span>
+                    <h4>Видео без названия</h4>
+                    <p>20 ноября 2025</p>
+                    <span className="tg-video-draft-badge gradient-badge">Черновик</span>
                 </div>
             </div>
         </section>

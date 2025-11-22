@@ -81,3 +81,30 @@ export const TEMPLATES_DATA = [
     { id: 2, title: "Руководство по адаптации", duration: "0:45", tag: "Продукт" },
     { id: 3, title: "Занятие курса", duration: "1:10", tag: "Образование" }
 ];
+
+export const NAVIGATION_ITEMS = [
+    {
+        id: SCREENS.HOME,
+        label: "Главная",
+        icon: "🏠",
+        activeIcon: "🏠"
+    },
+    {
+        id: SCREENS.VIDEO,
+        label: "Видео",
+        icon: "🎬",
+        activeIcon: "🎬"
+    },
+    {
+        id: SCREENS.AVATARS,
+        label: "Аватары",
+        icon: "👤",
+        activeIcon: "👤"
+    },
+    {
+        id: SCREENS.PROFILE,
+        label: "Профиль",
+        icon: "⚙️",
+        activeIcon: "⚙️"
+    }
+];

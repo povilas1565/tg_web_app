@@ -1,4 +1,3 @@
-// components/screens/ScreenRouter.jsx
 import React from 'react';
 import { useApp, SCREENS } from '../../contexts/AppContext';
 import HomeScreen from './Home/HomeScreen';

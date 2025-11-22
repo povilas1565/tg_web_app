@@ -7,26 +7,26 @@ const CreateVideoScreen = () => {
 
     const creationSections = [
         {
-            title: "TALKING HEAD AVATAR VIDEOS",
+            title: "ВИДЕО С ГОВОРЯЩИМИ АВАТАРАМИ",
             cards: [
-                { title: "Photo to Video", description: "Turn any photo into an avatar video" },
-                { title: "Quick Avatar Video", description: "Quickly create single-scene avatar video" },
-                { title: "Multi-Scene Avatar Video", description: "Quickly create multi-scene avatar video" },
-                { title: "Voice Mirror", description: "Use your voice to power an avatar's voice" }
+                { title: "Фото в видео", description: "Превратите любую фотографию в видео-аватар" },
+                { title: "Быстрый аватар видео", description: "Быстрое создание видео-аватара" },
+                { title: "Видео аватара с несколькими сценами", description: "Быстрое создание многосценного видео-аватара" },
+                { title: "Голосовое зеркало", description: "Используйте свой голос, чтобы усилить голос аватара" }
             ]
         },
         {
-            title: "PROMOTIONAL VIDEOS",
+            title: "РЕКЛАМНЫЕ ВИДЕО",
             cards: [
-                { title: "UGC Ad", description: "Create an ad showcasing your product" }
+                { title: "UGC Ad", description: "Создайте рекламу, демонстрирующую ваш продукт" }
             ]
         },
         {
-            title: "CREATE AVATARS",
+            title: "СОЗДАТЬ АВАТАРЫ",
             cards: [
-                { title: "Clone Yourself", description: "Record yourself to create a realistic avatar" },
-                { title: "Design an Avatar", description: "Generate avatar from a prompt" },
-                { title: "Face Swap", description: "Combine your face with another avatar" }
+                { title: "Клонируйте себя", description: "Запишите себя, чтобы создать реалистичный аватар" },
+                { title: "Создайте аватар", description: "Сгенерировать аватар из подсказки" },
+                { title: "Смена лица", description: "Объедините свое лицо с другим аватаром" }
             ]
         }
     ];
@@ -49,7 +49,7 @@ const CreateVideoScreen = () => {
                                     <button
                                         className="tg-button-primary"
                                         onClick={() => {
-                                            if (section.title === "CREATE AVATARS") {
+                                            if (section.title === "СОЗДАТЬ АВАТАРЫ") {
                                                 setScreen('avatars');
                                             } else {
                                                 setScreen('editor');

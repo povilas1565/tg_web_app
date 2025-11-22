@@ -30,7 +30,7 @@ const AppContent = () => {
 
             <ScreenRouter />
 
-            {/* Footer только для редактора */}
+            {/* FooterBar только для редактора, NavigationBar для всех остальных */}
             {appScreen === 'editor' && <FooterBar activeTab={activeTab} />}
 
             {isSettingsOpen && (

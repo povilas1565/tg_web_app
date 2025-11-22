@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 32px 24px;
-  min-height: calc(100vh - 140px);
+  padding: 24px 0;
+  min-height: calc(100vh - 180px);
   max-width: 800px;
   margin: 0 auto;
   width: 100%;

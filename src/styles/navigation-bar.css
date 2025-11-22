@@ -1,0 +1,152 @@
+.tg-navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--gradient-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-soft);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 400px;
+    z-index: 1000;
+    gap: 4px;
+}
+
+.tg-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 0;
+}
+
+.tg-nav-item:hover {
+    background: rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+.tg-nav-item-active {
+    background: var(--gradient-accent);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.tg-nav-item-active:hover {
+    background: var(--gradient-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+}
+
+.tg-nav-icon {
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.tg-nav-item-active .tg-nav-icon {
+    transform: scale(1.1);
+}
+
+.tg-nav-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.tg-nav-item-active .tg-nav-label {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Анимация появления */
+.tg-navigation-bar {
+    animation: slideUpIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUpIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .tg-navigation-bar {
+        padding: 10px 12px;
+        bottom: 16px;
+        width: calc(100% - 32px);
+    }
+
+    .tg-nav-item {
+        padding: 6px 8px;
+    }
+
+    .tg-nav-icon {
+        font-size: 18px;
+    }
+
+    .tg-nav-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tg-navigation-bar {
+        padding: 8px 10px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+    }
+
+    .tg-nav-item {
+        padding: 4px 6px;
+    }
+
+    .tg-nav-label {
+        font-size: 9px;
+    }
+}
+
+/* Эффект пульсации для активного элемента */
+.tg-nav-item-active::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-accent);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
