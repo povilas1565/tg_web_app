@@ -6,7 +6,7 @@ const ProjectSettingsPanel = () => {
     return (
         <section className="tg-card">
             <div className="tg-card-header">
-                <div className="tg-card-title">Настройки проекта</div>
+                <div className="tg-card-title gradient-text">Настройки проекта</div>
             </div>
             <div className="tg-fields-grid">
                 <div className="tg-field">

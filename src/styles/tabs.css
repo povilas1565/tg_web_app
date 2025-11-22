@@ -1,11 +1,26 @@
+
 .tg-tabs {
   display: flex;
-  gap: 6px;
-  background: rgba(15, 23, 42, 0.98);
+  gap: 4px;
+  background: var(--gradient-card);
   border-radius: 999px;
-  padding: 4px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.75);
+  padding: 8px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.tg-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-accent);
+  opacity: 0.5;
 }
 
 .tg-tab {
@@ -14,12 +29,50 @@
   border: none;
   background: transparent;
   color: var(--text-muted);
-  font-size: 13px;
-  padding: 7px 0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tg-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-accent);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 999px;
+}
+
+.tg-tab:hover {
+  color: var(--text-main);
+  transform: translateY(-2px);
+}
+
+.tg-tab:hover::before {
+  left: 0;
 }
 
 .tg-tab-active {
-  background: linear-gradient(90deg, #4f46e5, #22d3ee);
-  color: #f9fafb;
+  color: #ffffff;
+  background: var(--gradient-accent);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+  transform: translateY(0);
+}
+
+.tg-tab-active::before {
+  left: 0;
+}
+
+.tg-tab-active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
 }

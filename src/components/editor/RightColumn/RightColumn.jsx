@@ -10,31 +10,38 @@ import ProjectSettingsPanel from "./ProjectSettingsPanel.jsx";
 import "../../../styles/right-column.css";
 
 const RightColumn = ({ activeTab }) => {
-    if (activeTab === "avatar") {
-        return (
-            <section className="tg-right">
-                <AvatarGalleryPanel />
-                <AvatarGuidelinesPanel />
-            </section>
-        );
-    }
-
-    if (activeTab === "templates") {
-        return (
-            <section className="tg-right">
-                <TemplatesFilterPanel />
-                <TemplatesGridPanel />
-            </section>
-        );
-    }
-
-    // script tab (default)
-    return (
-        <section className="tg-right">
+    const renderScriptTab = () => (
+        <>
             <ScriptPanel />
             <AvatarVoicePanel />
             <SceneSettingsPanel />
             <ProjectSettingsPanel />
+        </>
+    );
+
+    const renderAvatarTab = () => (
+        <>
+            <AvatarGalleryPanel />
+            <AvatarGuidelinesPanel />
+        </>
+    );
+
+    const renderTemplatesTab = () => (
+        <>
+            <TemplatesFilterPanel />
+            <TemplatesGridPanel />
+        </>
+    );
+
+    const tabComponents = {
+        script: renderScriptTab,
+        avatar: renderAvatarTab,
+        templates: renderTemplatesTab
+    };
+
+    return (
+        <section className="tg-right">
+            {tabComponents[activeTab]()}
         </section>
     );
 };

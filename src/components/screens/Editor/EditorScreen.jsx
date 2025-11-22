@@ -1,8 +1,8 @@
 import React from 'react';
-import {useApp} from "../../contexts/AppContext";
-import Tabs from "../common/Tabs/Tabs";
-import PreviewColumn from "./PreviewColumn/PreviewColumn";
-import RightColumn from "./RightColumn/RightColumn";
+import { useApp } from '../../../contexts/AppContext';
+import Tabs from '../../common/Tabs/Tabs';
+import PreviewColumn from '../../editor/PreviewColumn/PreviewColumn';
+import RightColumn from '../../editor/RightColumn/RightColumn';
 
 const EditorScreen = () => {
     const { activeTab, setActiveTab } = useApp();

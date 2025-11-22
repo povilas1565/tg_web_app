@@ -5,7 +5,7 @@ const PreviewCard = () => {
   return (
       <section className="tg-card tg-preview-card">
         <div className="tg-card-header">
-          <div className="tg-card-title">Предварительный просмотр видео</div>
+          <div className="tg-card-title gradient-text">Предварительный просмотр видео</div>
           <div className="tg-preview-header-right">
             <select className="tg-mini-select">
               <option>9 : 16</option>
@@ -29,7 +29,7 @@ const PreviewCard = () => {
           <div className="tg-preview-video">
             <div className="tg-preview-avatar-circle" />
             <div className="tg-preview-wave" />
-            <div className="tg-preview-badge">AI Avatar</div>
+            <div className="tg-preview-badge gradient-badge">AI Avatar</div>
           </div>
         </div>
 

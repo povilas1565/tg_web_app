@@ -5,7 +5,7 @@ const AvatarGuidelinesPanel = () => {
     return (
         <section className="tg-card">
             <div className="tg-card-header">
-                <div className="tg-card-title">Рекомендации по загрузке</div>
+                <div className="tg-card-title gradient-text">Рекомендации по загрузке</div>
             </div>
             <ul className="tg-guidelines-list">
                 <li>Смотрите прямо в камеру, не поворачивая слишком сильно голову.</li>

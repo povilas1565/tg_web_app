@@ -23,3 +23,4 @@ export const getTimeAgo = (dateString) => {
     if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)} часов назад`;
     return `${Math.floor(diffInSeconds / 86400)} дней назад`;
 };
+

@@ -1,75 +1,123 @@
+
 .tg-field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .tg-field-inline {
-  margin-top: 6px;
-  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .tg-label {
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
+.tg-input,
 .tg-textarea,
 .tg-select {
-  border-radius: 10px;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: rgba(15, 23, 42, 0.7);
   color: var(--text-main);
-  padding: 8px 10px;
-  font-size: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 400;
   outline: none;
-}
-
-.tg-textarea {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
   resize: vertical;
 }
 
+.tg-input:focus,
 .tg-textarea:focus,
 .tg-select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent-soft);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  transform: translateY(-1px);
+}
+
+.tg-input::placeholder,
+.tg-textarea::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .tg-field-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
-  margin-top: 3px;
+  font-size: 12px;
+  margin-top: 6px;
 }
 
 .tg-field-footer-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .tg-helper {
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .tg-fields-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 8px;
+  gap: 16px;
 }
 
 .tg-range {
   width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(15, 23, 42, 0.7);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.tg-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+  transition: all 0.3s ease;
+}
+
+.tg-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.6);
 }
 
 .tg-range-value {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--text-muted);
+  min-width: 80px;
+  text-align: right;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .tg-fields-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .tg-field-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
 }

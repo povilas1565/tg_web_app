@@ -1,6 +1,5 @@
 import React from "react";
 import "../../../styles/footer.css";
-import "../../../styles/buttons.css";
 
 const TAB_LABELS = {
   script: {
@@ -23,14 +22,12 @@ const FooterBar = ({ activeTab }) => {
   return (
       <footer className="tg-footer">
         <div className="tg-footer-left">
-          <div className="tg-footer-title">{label.title}</div>
+          <div className="tg-footer-title gradient-text">{label.title}</div>
           <div className="tg-footer-sub">{label.subtitle}</div>
         </div>
         <div className="tg-footer-right">
           <button className="tg-button-ghost">Предварительный просмотр</button>
-          <button className="tg-button-primary">
-            Продолжить в Telegram
-          </button>
+          <button className="tg-button-primary">Продолжить в Telegram</button>
         </div>
       </footer>
   );

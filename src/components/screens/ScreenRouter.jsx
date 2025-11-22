@@ -1,3 +1,4 @@
+// components/screens/ScreenRouter.jsx
 import React from 'react';
 import { useApp, SCREENS } from '../../contexts/AppContext';
 import HomeScreen from './Home/HomeScreen';
@@ -6,7 +7,7 @@ import CreateVideoScreen from './Video/CreateVideoScreen';
 import ProjectsScreen from './Projects/ProjectsScreen';
 import ProfileScreen from './Profile/ProfileScreen';
 import AvatarsScreen from './Avatars/AvatarsScreen';
-import EditorScreen from "../editor/EditorScreen";
+import EditorScreen from "./Editor/EditorScreen";
 
 
 const ScreenRouter = () => {

@@ -1,21 +1,43 @@
 .tg-root {
-  height: 100vh;
-  padding: 12px;
+  min-height: 100vh;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  background: var(--bg-root);
+  background: var(--gradient-dark);
+  position: relative;
+}
+
+.tg-root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+          radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .tg-shell {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
   .tg-root {
-    padding: 8px;
+    padding: 16px;
+  }
+
+  .tg-shell {
+    gap: 16px;
   }
 }

@@ -1,85 +1,157 @@
+
 .tg-scenes {
-  background: radial-gradient(circle at top left, #050816, #020617);
-  border-radius: var(--radius-lg);
+  background: var(--gradient-card);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--border-soft);
-  padding: 8px 10px 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.tg-scenes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  opacity: 0.7;
 }
 
 .tg-scenes-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
+  font-weight: 600;
 }
 
 .tg-scenes-left {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: baseline;
 }
 
 .tg-scenes-sub {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .tg-scenes-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .tg-scenes-list {
   display: flex;
-  gap: 6px;
+  gap: 12px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.tg-scenes-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tg-scenes-list::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 3px;
+}
+
+.tg-scenes-list::-webkit-scrollbar-thumb {
+  background: var(--gradient-accent);
+  border-radius: 3px;
 }
 
 .tg-scene {
-  min-width: 180px;
-  border-radius: 14px;
+  min-width: 200px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-soft);
-  background: rgba(15, 23, 42, 0.95);
-  padding: 6px 8px;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 16px;
   display: flex;
-  gap: 6px;
+  gap: 12px;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.tg-scene:hover {
+  border-color: var(--accent);
+  background: rgba(79, 70, 229, 0.1);
+  transform: translateY(-2px);
 }
 
 .tg-scene-active {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent-soft);
+  background: var(--gradient-accent);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.tg-scene-active .tg-scene-index {
+  background: #ffffff;
+  color: var(--accent);
+  border-color: #ffffff;
+}
+
+.tg-scene-active .tg-scene-title {
+  color: #ffffff;
+}
+
+.tg-scene-active .tg-scene-sub {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .tg-scene-index {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1px solid var(--border-soft);
+  border: 2px solid var(--border-soft);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--text-muted);
+  background: rgba(15, 23, 42, 0.8);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .tg-scene-body {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
 }
 
 .tg-scene-title {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tg-scene-sub {
   font-size: 11px;
   color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

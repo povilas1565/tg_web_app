@@ -1,13 +1,11 @@
 import React from "react";
-import "../../../styles/forms.css";
 import "../../../styles/avatar-panel.css";
-import "../../../styles/buttons.css";
 
 const AvatarVoicePanel = () => {
     return (
         <section className="tg-card">
             <div className="tg-card-header">
-                <div className="tg-card-title">Аватар и Голос</div>
+                <div className="tg-card-title gradient-text">Аватар и Голос</div>
                 <button className="tg-link-button">Управление аватарами</button>
             </div>
 

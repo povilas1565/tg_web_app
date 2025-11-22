@@ -1,12 +1,12 @@
+
 import React from "react";
 import "../../../styles/forms.css";
-import "../../../styles/buttons.css";
 
 const ScriptPanel = () => {
     return (
         <section className="tg-card">
             <div className="tg-card-header">
-                <div className="tg-card-title">Скрипт</div>
+                <div className="tg-card-title gradient-text">Скрипт</div>
                 <div className="tg-card-actions">
                     <button className="tg-chip tg-chip-small">Переписывание с ИИ</button>
                     <button className="tg-chip tg-chip-small">Перевод</button>
@@ -32,13 +32,7 @@ const ScriptPanel = () => {
 
             <div className="tg-field tg-field-inline">
                 <label className="tg-label">Скорость чтения</label>
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    defaultValue="40"
-                    className="tg-range"
-                />
+                <input type="range" min="0" max="100" defaultValue="40" className="tg-range" />
                 <span className="tg-range-value">Нормальный</span>
             </div>
         </section>

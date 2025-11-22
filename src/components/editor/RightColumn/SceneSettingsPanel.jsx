@@ -6,7 +6,7 @@ const SceneSettingsPanel = () => {
   return (
       <section className="tg-card">
         <div className="tg-card-header">
-          <div className="tg-card-title">Настройки сцены</div>
+          <div className="tg-card-title gradient-text">Настройки сцены</div>
         </div>
 
         <div className="tg-fields-grid">

@@ -1,3 +1,4 @@
+// components/screens/Avatars/AvatarsScreen.jsx
 import React from "react";
 import { useApp } from "../../../contexts/AppContext";
 import "../../../styles/avatars.css";
@@ -5,16 +6,39 @@ import "../../../styles/avatars.css";
 const AvatarsScreen = () => {
     const { setScreen } = useApp();
 
+    const avatarOptions = [
+        {
+            title: "Clone Yourself",
+            description: "Record yourself to create a realistic avatar",
+            buttonText: "Записать"
+        },
+        {
+            title: "Design an Avatar",
+            description: "Generate avatar from a prompt",
+            buttonText: "Сгенерировать"
+        },
+        {
+            title: "Face Swap",
+            description: "Combine your face with another avatar",
+            buttonText: "Обменять"
+        }
+    ];
+
+    const myAvatars = [
+        { name: "H Photo" },
+        { name: "Generate H avatar" }
+    ];
+
     return (
         <section className="tg-avatars">
             <div className="tg-avatars-header">
-                <h1>Аватары</h1>
+                <h1 className="gradient-text">Аватары</h1>
                 <button className="tg-button-primary">+ Новый аватар</button>
             </div>
 
             <div className="tg-avatars-content">
                 <div className="tg-avatars-empty">
-                    <h2>Готовы создать ваш первый аватар?</h2>
+                    <h2 className="gradient-text">Готовы создать ваш первый аватар?</h2>
                     <p>Нажмите здесь чтобы перейти на страницу создания аватара.</p>
                     <button className="tg-button-primary" onClick={() => setScreen('create-video')}>
                         Начать
@@ -22,36 +46,24 @@ const AvatarsScreen = () => {
                 </div>
 
                 <div className="tg-avatar-creation-options">
-                    <div className="tg-avatar-option">
-                        <h3>Клонируйте себя</h3>
-                        <p>Запишите себя, чтобы создать реалистичный аватар</p>
-                        <button className="tg-button-ghost">Записать</button>
-                    </div>
-
-                    <div className="tg-avatar-option">
-                        <h3>Создайте аватар</h3>
-                        <p>Сгенерировать аватар из подсказки</p>
-                        <button className="tg-button-ghost">Сгенерировать</button>
-                    </div>
-
-                    <div className="tg-avatar-option">
-                        <h3>Смена лица</h3>
-                        <p>Объедините свое лицо с другим аватаром</p>
-                        <button className="tg-button-ghost">Обменять</button>
-                    </div>
+                    {avatarOptions.map((option, index) => (
+                        <div key={index} className="tg-avatar-option">
+                            <h3 className="gradient-text">{option.title}</h3>
+                            <p>{option.description}</p>
+                            <button className="tg-button-ghost">{option.buttonText}</button>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="tg-my-avatars">
-                    <h3>Мои Аватары</h3>
+                    <h3 className="gradient-text">My Avatars</h3>
                     <div className="tg-avatars-grid">
-                        <div className="tg-avatar-item">
-                            <div className="tg-avatar-thumb"></div>
-                            <span>H Фото</span>
-                        </div>
-                        <div className="tg-avatar-item">
-                            <div className="tg-avatar-thumb"></div>
-                            <span>Создать H аватар</span>
-                        </div>
+                        {myAvatars.map((avatar, index) => (
+                            <div key={index} className="tg-avatar-item">
+                                <div className="tg-avatar-thumb" />
+                                <span className="gradient-text">{avatar.name}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

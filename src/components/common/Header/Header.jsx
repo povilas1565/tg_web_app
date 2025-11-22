@@ -1,22 +1,21 @@
 import React from "react";
 import { useApp, SCREENS } from "../../../contexts/AppContext";
 import "../../../styles/header.css";
-import "../../../styles/buttons.css";
 
 const Header = ({ appScreen, currentProject, onBackToProjects, onOpenProfile, onOpenSettings }) => {
   const showBack = appScreen !== SCREENS.HOME && appScreen !== SCREENS.VIDEO && appScreen !== SCREENS.PROJECTS;
 
   const getHeaderTitle = () => {
-    switch (appScreen) {
-      case SCREENS.HOME: return "Главная";
-      case SCREENS.VIDEO: return "Видео";
-      case SCREENS.CREATE_VIDEO: return "Создание видео";
-      case SCREENS.PROJECTS: return "Проекты";
-      case SCREENS.PROFILE: return "Профиль";
-      case SCREENS.AVATARS: return "Аватары";
-      case SCREENS.EDITOR: return currentProject?.name || "Редактор";
-      default: return "ИИ Аватары";
-    }
+    const titles = {
+      [SCREENS.HOME]: "Главная",
+      [SCREENS.VIDEO]: "Видео",
+      [SCREENS.CREATE_VIDEO]: "Создание видео",
+      [SCREENS.PROJECTS]: "Проекты",
+      [SCREENS.PROFILE]: "Профиль",
+      [SCREENS.AVATARS]: "Аватары",
+      [SCREENS.EDITOR]: currentProject?.name || "Редактор"
+    };
+    return titles[appScreen] || "ИИ Аватары";
   };
 
   return (
@@ -31,7 +30,7 @@ const Header = ({ appScreen, currentProject, onBackToProjects, onOpenProfile, on
             <span>AA</span>
           </div>
           <div className="tg-header-text">
-            <div className="tg-app-name">{getHeaderTitle()}</div>
+            <div className="tg-app-name gradient-text">{getHeaderTitle()}</div>
             <div className="tg-app-subtitle">
               Создавайте говорящие ИИ-аватары прямо в Telegram
             </div>
@@ -50,7 +49,7 @@ const Header = ({ appScreen, currentProject, onBackToProjects, onOpenProfile, on
             <div className="tg-header-avatar" />
             <div className="tg-header-profile-text">
               <span className="tg-header-profile-name">NikitaWebTeamLead</span>
-              <span className="tg-header-profile-role">Free</span>
+              <span className="tg-header-profile-role gradient-text">Free</span>
             </div>
           </button>
         </div>

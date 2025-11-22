@@ -1,9 +1,29 @@
 .tg-guidelines-list {
   margin: 0;
-  padding-left: 18px;
-  font-size: 12px;
+  padding-left: 20px;
+  font-size: 13px;
   color: var(--text-muted);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+  line-height: 1.5;
 }
+
+.tg-guidelines-list li {
+  position: relative;
+  padding-left: 8px;
+}
+
+.tg-guidelines-list li::before {
+  content: '•';
+  position: absolute;
+  left: -16px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tg-guidelines-list li:nth-child(1)::before { color: #4facfe; }
+.tg-guidelines-list li:nth-child(2)::before { color: #00f2fe; }
+.tg-guidelines-list li:nth-child(3)::before { color: #a8c0ff; }
+.tg-guidelines-list li:nth-child(4)::before { color: #3f2b96; }

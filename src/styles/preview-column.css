@@ -1,12 +1,63 @@
 .tg-left {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
     min-height: 0;
+    height: 100%;
 }
 
-@media (max-width: 960px) {
+.tg-left > * {
+    flex-shrink: 0;
+}
+
+.tg-left .tg-preview-card {
+    flex: 1;
+    min-height: 400px;
+}
+
+.tg-left .tg-scenes {
+    flex-shrink: 0;
+}
+
+/* Анимации для preview колонки */
+.tg-left .tg-card {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
     .tg-left {
         order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .tg-left {
+        gap: 16px;
+    }
+
+    .tg-left .tg-preview-card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tg-left {
+        gap: 12px;
+    }
+
+    .tg-left .tg-preview-card {
+        min-height: 300px;
     }
 }

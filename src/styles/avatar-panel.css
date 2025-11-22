@@ -1,31 +1,66 @@
 .tg-avatar-row {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .tg-avatar-preview {
-  width: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .tg-avatar-circle {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  background: linear-gradient(150deg, #64748b, #0f172a);
+  width: 100px;
+  height: 100px;
+  border-radius: 24px;
+  background: var(--gradient-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(163, 162, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tg-avatar-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+}
+
+.tg-avatar-circle:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(163, 162, 255, 0.6);
 }
 
 .tg-avatar-label {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .tg-avatar-actions {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  flex: 1;
+}
+
+.tg-avatar-actions .tg-button-ghost {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.tg-avatar-actions .tg-link-button {
+  align-self: flex-start;
+  margin-top: 4px;
 }

@@ -2,8 +2,10 @@
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-  gap: 12px;
+  gap: 20px;
   min-height: 0;
+  align-items: start;
+  height: 100%;
 }
 
 .tg-left,
@@ -11,11 +13,109 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  height: 100%;
 }
 
-@media (max-width: 960px) {
+.tg-right {
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+/* Анимация появления сетки */
+.app-main-grid {
+  animation: gridAppear 0.6s ease-out;
+}
+
+@keyframes gridAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Состояния для разных экранов */
+@media (max-width: 1200px) {
   .app-main-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
+
+  .tg-left,
+  .tg-right {
+    gap: 16px;
+  }
+
+  .tg-right {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main-grid {
+    gap: 12px;
+  }
+
+  .tg-left,
+  .tg-right {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main-grid {
+    gap: 8px;
+  }
+
+  .tg-left,
+  .tg-right {
+    gap: 8px;
+  }
+}
+
+/* Специфичные стили для редактора */
+.app-main-grid--editor {
+  min-height: 600px;
+}
+
+/* Состояние загрузки */
+.app-main-grid--loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.app-main-grid--loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-dark);
+  opacity: 0.8;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-main-grid--loading::after {
+  content: 'Загрузка...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 11;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

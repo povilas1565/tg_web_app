@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { useTelegram } from '../hooks/useTelegram';
 
@@ -46,21 +45,16 @@ export const AppProvider = ({ children }) => {
         const mainButton = webApp.MainButton;
         const { appScreen, activeTab } = state;
 
-        // Логика кнопки Telegram
-        if (appScreen === SCREENS.PROJECTS) {
-            mainButton.setText("Создать или открыть проект");
-        } else if (appScreen === SCREENS.PROFILE) {
-            mainButton.setText("Назад к проектам");
-        } else if (appScreen === SCREENS.HOME) {
-            mainButton.setText("К видео");
-        } else if (appScreen === SCREENS.VIDEO) {
-            mainButton.setText("Редактировать видео");
-        } else if (appScreen === SCREENS.CREATE_VIDEO) {
-            mainButton.setText("Создать видео");
-        } else if (appScreen === SCREENS.EDITOR) {
-            mainButton.setText("Сохранить проект");
-        }
+        const buttonTexts = {
+            [SCREENS.PROJECTS]: "Создать или открыть проект",
+            [SCREENS.PROFILE]: "Назад к проектам",
+            [SCREENS.HOME]: "К видео",
+            [SCREENS.VIDEO]: "Редактировать видео",
+            [SCREENS.CREATE_VIDEO]: "Создать видео",
+            [SCREENS.EDITOR]: "Сохранить проект"
+        };
 
+        mainButton.setText(buttonTexts[appScreen] || "Продолжить");
         mainButton.show();
         mainButton.enable();
         mainButton.color = "#4f46e5";
@@ -68,31 +62,24 @@ export const AppProvider = ({ children }) => {
 
         const handleMainButtonClick = () => {
             webApp.HapticFeedback?.impactOccurred("medium");
-            if (appScreen === SCREENS.PROJECTS) {
-                handleOpenProject({
-                    id: 999,
-                    name: "New project",
+            const actions = {
+                [SCREENS.PROJECTS]: () => handleOpenProject({
+                    id: Date.now(),
+                    name: "Новый проект",
                     duration: "0:30",
                     scenes: 1
-                });
-            } else if (appScreen === SCREENS.PROFILE) {
-                handleBackToProjects();
-            } else if (appScreen === SCREENS.HOME) {
-                setScreen(SCREENS.VIDEO);
-            } else if (appScreen === SCREENS.VIDEO) {
-                setScreen(SCREENS.CREATE_VIDEO);
-            } else if (appScreen === SCREENS.CREATE_VIDEO) {
-                setScreen(SCREENS.EDITOR);
-            } else {
-                alert(`MainButton clicked in tab: ${activeTab}`);
-            }
+                }),
+                [SCREENS.PROFILE]: handleBackToProjects,
+                [SCREENS.HOME]: () => setScreen(SCREENS.VIDEO),
+                [SCREENS.VIDEO]: () => setScreen(SCREENS.CREATE_VIDEO),
+                [SCREENS.CREATE_VIDEO]: () => setScreen(SCREENS.EDITOR)
+            };
+
+            actions[appScreen]?.() || alert(`MainButton clicked in tab: ${activeTab}`);
         };
 
         webApp.onEvent("mainButtonClicked", handleMainButtonClick);
-
-        return () => {
-            webApp.offEvent("mainButtonClicked", handleMainButtonClick);
-        };
+        return () => webApp.offEvent("mainButtonClicked", handleMainButtonClick);
     }, [webApp, state.appScreen, state.activeTab]);
 
     const setScreen = (screen) => dispatch({ type: 'SET_SCREEN', payload: screen });
@@ -110,17 +97,9 @@ export const AppProvider = ({ children }) => {
         setScreen(SCREENS.EDITOR);
     };
 
-    const handleBackToProjects = () => {
-        setScreen(SCREENS.PROJECTS);
-    };
-
-    const handleOpenProfile = () => {
-        setScreen(SCREENS.PROFILE);
-    };
-
-    const handleOpenSettings = () => {
-        setSettingsOpen(true);
-    };
+    const handleBackToProjects = () => setScreen(SCREENS.PROJECTS);
+    const handleOpenProfile = () => setScreen(SCREENS.PROFILE);
+    const handleOpenSettings = () => setSettingsOpen(true);
 
     const value = {
         ...state,
@@ -143,8 +122,6 @@ export const AppProvider = ({ children }) => {
 
 export const useApp = () => {
     const context = useContext(AppContext);
-    if (!context) {
-        throw new Error('useApp must be used within AppProvider');
-    }
+    if (!context) throw new Error('useApp must be used within AppProvider');
     return context;
 };

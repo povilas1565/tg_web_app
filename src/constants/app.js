@@ -68,3 +68,16 @@ export const MOCK_PROJECTS = [
         scenes: 5
     }
 ];
+
+export const AVATARS_DATA = [
+    { id: 1, name: "Anna · Host", tag: "Pro" },
+    { id: 2, name: "James · Tech", tag: "Pro" },
+    { id: 3, name: "Sofia · Casual", tag: "Free" },
+    { id: 4, name: "Noah · Corporate", tag: "Free" }
+];
+
+export const TEMPLATES_DATA = [
+    { id: 1, title: "Введение героя сайта", duration: "0:25", tag: "Маркетинг" },
+    { id: 2, title: "Руководство по адаптации", duration: "0:45", tag: "Продукт" },
+    { id: 3, title: "Занятие курса", duration: "1:10", tag: "Образование" }
+];
